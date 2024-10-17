@@ -9,23 +9,43 @@ function generateCards(page) {
 
     const start = (page - 1) * cardsPerPage;
     const end = start + cardsPerPage;
-    const paginatedManuales = filteredManuales.slice(start, end);
+
+    // Ordena primero por activos (true) y luego por inactivos (false)
+    const sortedManuales = filteredManuales.slice().sort((a, b) => b.activo - a.activo);
+
+    const paginatedManuales = sortedManuales.slice(start, end);
 
     paginatedManuales.forEach(manual => {
-        const card = `
-            <div class="col-md-4">
-                <div class="card" onclick="window.open('${manual.url}', '_blank')" style="cursor: pointer;">
-                    <div class="card-body">
-                        <h5 class="card-title">${manual.nombre}</h5>
-                        <p class="card-text">Tipo: ${manual.tipo}</p>
-                        <p class="card-text">Fecha Actualización: ${manual.fecha}</p>
-                        <p class="card-text">${manual.descripcion}</p>
+        const card = document.createElement('div');
+        card.classList.add('col-md-4');
+        card.innerHTML = `
+            <div class="card ${manual.activo ? 'card-active' : 'card-inactive'}" style="cursor: ${manual.activo ? 'pointer' : 'not-allowed'};">
+                <div class="card-body">
+                    <h5 class="card-title">${manual.nombre}</h5>
+                    <p class="card-text">Tipo: ${manual.tipo}</p>
+                    <p class="card-text">Fecha Actualización: ${manual.fecha}</p>
+                    <p class="card-text">${manual.descripcion}</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check${manual.nombre}" ${manual.activo ? 'checked' : ''} disabled>
+                        <label class="form-check-label" for="check${manual.nombre}">
+                            ${manual.activo ? 'Activo' : 'Inactivo'}
+                        </label>
                     </div>
                 </div>
             </div>`;
-        cardContainer.innerHTML += card;
+
+        // Solo agregar el evento click si el manual está activo
+        if (manual.activo) {
+            card.querySelector('.card').addEventListener('click', () => {
+                window.open(manual.url, '_blank');
+            });
+        }
+
+        cardContainer.appendChild(card); // Añadir la tarjeta al contenedor
     });
 }
+
+
 
 // Generar la paginación
 function generatePagination() {

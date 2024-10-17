@@ -4,7 +4,8 @@ const manuales = [
       "nombre": "Envío de Centralización por SFTP", 
       "fecha": "01-12-2023", 
       "descripcion": "Verificar la configuración del SFTP para el envío del archivo centralización", 
-      "url": "manual.html?option=centralizacion_sftp", 
+      "url": "manual.html?option=centralizacion_sftp",
+      "activo": false, 
       "imagenes": ["imagenes/api_postman/utilizar_api_postman_1.png", "imagenes/api_postman/utilizar_api_postman_2.png"],
       "highlightDetails": [
             { x: 955, y: 5, width: 45, height: 40 },  // Rectángulo para la primera imagen
@@ -20,7 +21,8 @@ const manuales = [
       "nombre": "Envío de Banco por SFTP", 
       "fecha": "01-12-2023", 
       "descripcion": "Verificar la configuración del SFTP para el envío del archivo banco", 
-      "url": "manual.html?id=banco_sftp", 
+      "url": "manual.html?id=banco_sftp",
+      "activo": false, 
       "imagenes": ["imagenes/api_postman/utilizar_api_postman_1.png", "imagenes/api_postman/utilizar_api_postman_2.png"],
       "highlightDetails": [
             { x: 955, y: 5, width: 45, height: 40 },  // Rectángulo para la primera imagen
@@ -36,7 +38,8 @@ const manuales = [
       "nombre": "Validar el envío a SFTP", 
       "fecha": "05-12-2023", 
       "descripcion": "Veremos el paso a paso para probar el envío del archivo banco o centralización al SFTP de BUK", 
-      "url": "manual.html?id=probar_sftp", 
+      "url": "manual.html?id=probar_sftp",
+      "activo": false,
       "imagenes": ["imagenes/api_postman/utilizar_api_postman_1.png", "imagenes/api_postman/utilizar_api_postman_2.png"],
       "highlightDetails": [
             { x: 955, y: 5, width: 45, height: 40 },  // Rectángulo para la primera imagen
@@ -52,7 +55,8 @@ const manuales = [
       "nombre": "Creación de token y conexión API", 
       "fecha": "01-12-2023", 
       "descripcion": "Veremos como configurar el token (llave) desde BUK para poder conectarnos en apidocs", 
-      "url": "manual.html?id=token_api", 
+      "url": "manual.html?id=token_api",
+      "activo": false, 
       "imagenes": ["imagenes/api_postman/utilizar_api_postman_1.png", "imagenes/api_postman/utilizar_api_postman_2.png"],
       "highlightDetails": [
             { x: 955, y: 5, width: 45, height: 40 },  // Rectángulo para la primera imagen
@@ -68,7 +72,8 @@ const manuales = [
       "nombre": "Utilizar API desde Postman", 
       "fecha": "07-12-2023", 
       "descripcion": "Veremos como realizar la misma consulta de apidocs en una herramienta externa de BUK (Postman)", 
-      "url": "manual.html?id=api_postman", 
+      "url": "manual.html?id=api_postman",
+      "activo": false,
       "imagenes": ["imagenes/api_postman/utilizar_api_postman_1.png", "imagenes/api_postman/utilizar_api_postman_2.png"],
       "highlightDetails": [
             { x: 955, y: 5, width: 45, height: 40 },  // Rectángulo para la primera imagen
@@ -84,7 +89,8 @@ const manuales = [
       "nombre": "Configuración de Webhook y pruebas", 
       "fecha": "15-12-2023", 
       "descripcion": "Veremos la configuración del webhook y realizaremos una prueba con un servidor externo", 
-      "url": "manual.html?id=webhook_config_pruebas", 
+      "url": "manual.html?id=webhook_config_pruebas",
+      "activo": false,
       "imagenes": ["imagenes/api_postman/utilizar_api_postman_1.png", "imagenes/api_postman/utilizar_api_postman_2.png"],
       "highlightDetails": [
             { x: 955, y: 5, width: 45, height: 40 },  // Rectángulo para la primera imagen
@@ -100,7 +106,8 @@ const manuales = [
       "nombre": "Configurar SSO OAUTH", 
       "fecha": "01-12-2023", 
       "descripcion": "Veremos como configurar el SSO - Protocolo OAUTH", 
-      "url": "manual.html?id=sso_oauth", 
+      "url": "manual.html?id=sso_oauth",
+      "activo": false,
       "imagenes": ["imagenes/api_postman/utilizar_api_postman_1.png", "imagenes/api_postman/utilizar_api_postman_2.png"],
       "highlightDetails": [
             { x: 955, y: 5, width: 45, height: 40 },  // Rectángulo para la primera imagen
@@ -116,7 +123,8 @@ const manuales = [
       "nombre": "Configurar SSO SAML", 
       "fecha": "05-12-2023", 
       "descripcion": "Veremos como configurar el SSO - Protocolo SAML", 
-      "url": "manual.html?id=sso_saml", 
+      "url": "manual.html?id=sso_saml",
+      "activo": true, 
       "imagenes": ["imagenes/api_postman/utilizar_api_postman_1.png", "imagenes/api_postman/utilizar_api_postman_2.png"],
       "highlightDetails": [
             { x: 955, y: 5, width: 45, height: 40 },  // Rectángulo para la primera imagen

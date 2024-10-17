@@ -281,3 +281,12 @@ body, html {
     min-height: 400px; /* Ajusta la altura mínima del cuerpo del modal */
 }
 
+.card-inactive {
+    opacity: 0.5;
+}
+
+.card-active {
+    opacity: 1;
+}
+
+
