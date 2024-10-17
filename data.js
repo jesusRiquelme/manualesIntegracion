@@ -121,8 +121,8 @@ const manuales = [
   {
       "tipo": "SSO", 
       "nombre": "Configurar SSO SAML", 
-      "fecha": "05-12-2023", 
-      "descripcion": "Veremos como configurar el SSO - Protocolo SAML", 
+      "fecha": "17-10-2024", 
+      "descripcion": "Este manual te guía en la configuración del inicio de sesión único (SSO) mediante SAML, permitiendo a los usuarios autenticarse a través de su Proveedor de Identidad (IdP) para acceder a la plataforma de manera segura y sin credenciales adicionales.", 
       "url": "manual.html?id=sso_saml",
       "activo": true, 
       "imagenes": ["imagenes/sso_saml/sso_saml_1.png",
@@ -140,14 +140,10 @@ const manuales = [
             { x: 210, y: 53, width: 175, height: 35 }  // Rectángulo para la segunda imagen
         ],
       "instrucciones": [
-    "<h5>Administración</h5> \
-    <p>Debes hacer clic para acceder a los ajustes de la plataforma.</p>",
+    "<p class='text-center'>Debes hacer clic para acceder a los ajustes de la plataforma.</p>",
+    "<p class='text-center'>Aquí encontraremos todas las configuraciones que nos entrega la plataforma.</p>",
 
-    "<h5>Parámetros Generales</h5> \
-    <p>Aquí encontraremos todas las configuraciones que nos entrega la plataforma.</p>",
-
-    "<h5>Buscar</h5> \
-    <p>Debes ingresar la palabra <strong>SAML</strong> para encontrar la configuración.</p>",
+    "<p class='text-center'>Debes ingresar la palabra <strong>SAML</strong> para encontrar la configuración.</p>",
 
     "<table class='table table-striped table-bordered'> \
         <thead class='table-dark'> \
@@ -163,7 +159,7 @@ const manuales = [
             </tr> \
             <tr> \
                 <td><strong>Dominios a autenticar vía SAML</strong></td> \
-                <td>Correos que cuenten con el dominio definido en estos parámetros serán consultados por Buk al proveedor de autenticación.</td> \
+                <td>Debemos ingresar los dominios que el cliente necesita autenticar ejemplo: buk.cl. Destacar que puede ser más de 1 y debe ir separado con puntoy coma.</td> \
             </tr> \
             <tr> \
                 <td><strong>Issuer/Audience URL (opcional)</strong></td> \
@@ -175,15 +171,15 @@ const manuales = [
             </tr> \
             <tr> \
                 <td><strong>URL del IdP para SSO</strong></td> \
-                <td>Esta URL es la que BUK utilizará para ir a consultar al proveedor de autenticación sobre la existencia del usuario.</td> \
+                <td>Se encuentra dentro del XML y es la URL que BUK utilizará para ir a consultar al proveedor de autenticación sobre la existencia del usuario.</td> \
             </tr> \
             <tr> \
                 <td><strong>URL del IdP para SLO</strong></td> \
-                <td>Se utiliza para cerrar sesión en el proveedor SAML cuando se cierre sesión en BUK.</td> \
+                <td>Se encuentra dentro del XML y se utiliza para cerrar sesión en el proveedor SAML cuando se cierre sesión en BUK.</td> \
             </tr> \
             <tr> \
                 <td><strong>Certificado de IdP</strong></td> \
-                <td>Información para validar que la transacción es válida.</td> \
+                <td>Se encuentra dentro del XML y corresponde al certificado que garantizar las transacciones entre el Proveedor de Identidad y el Proveedor de Servicios (SP). Generalmente comienza con MIIC8 y se encuentra cerrado por las etiquetas </X509Certificate> .</td> \
             </tr> \
             <tr> \
                 <td><strong>Hash del certificado de IdP</strong></td> \
@@ -200,20 +196,18 @@ const manuales = [
         </tbody> \
     </table>",
 
-    "<h5>Guardar</h5> \
-    <p>Luego de configurar cada uno de los campos solicitados, daremos clic en el botón <strong>Guardar</strong>.</p>",
+    "<p class='text-center'>Luego de configurar cada uno de los campos solicitados, daremos clic en el botón <strong>Guardar</strong>.</p>",
 
-    "<h5>Pruebas</h5> \
-    <p>Ya podemos ver en la parte superior el mensaje de éxito. Ahora es momento de hacer pruebas ingresando con algún colaborador que exista en BUK y dentro de la aplicación creada en el proveedor.</p>"
+    "<p class='text-center'>Ya podemos ver en la parte superior el mensaje de éxito. Ahora es momento de hacer pruebas ingresando con algún colaborador que exista en BUK y dentro de la aplicación creada en el proveedor.</p>"
 ],
     "enlacesDocumentacion": [
         {
-            "nombre": "Guía de Configuración SAML",
-            "url": "https://example.com/guia-configuracion-saml"
+            "nombre": "Integración SAML",
+            "url": "https://docs.google.com/document/d/1SxbkmYYhMHrbSN3sJg1ldQmgL94PCEPm/edit?usp=sharing&ouid=114187329860437263985&rtpof=true&sd=true"
         },
         {
-            "nombre": "Documentación Oficial de SAML",
-            "url": "https://example.com/documentacion-oficial-saml"
+            "nombre": "SAML Integration English Version",
+            "url": "https://docs.google.com/document/d/1uA8rPuCZrQkfMsKsBe451NL0jAZMmsy4/edit?usp=sharing&ouid=114187329860437263985&rtpof=true&sd=true"
         }
     ]
   }

@@ -16,6 +16,12 @@ function generateCards(page) {
     const paginatedManuales = sortedManuales.slice(start, end);
 
     paginatedManuales.forEach(manual => {
+        // Verifica si la descripción es mayor de 50 caracteres y la corta
+        let descripcionCorta = manual.descripcion;
+        if (manual.descripcion.length > 50) {
+            descripcionCorta = manual.descripcion.substring(0, 90) + '...';
+        }
+
         const card = document.createElement('div');
         card.classList.add('col-md-4');
         card.innerHTML = `
@@ -24,7 +30,7 @@ function generateCards(page) {
                     <h5 class="card-title">${manual.nombre}</h5>
                     <p class="card-text">Tipo: ${manual.tipo}</p>
                     <p class="card-text">Fecha Actualización: ${manual.fecha}</p>
-                    <p class="card-text">${manual.descripcion}</p>
+                    <p class="card-text">${descripcionCorta}</p> <!-- Descripción recortada -->
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="check${manual.nombre}" ${manual.activo ? 'checked' : ''} disabled>
                         <label class="form-check-label" for="check${manual.nombre}">
@@ -47,6 +53,7 @@ function generateCards(page) {
 
 
 
+
 // Generar la paginación
 function generatePagination() {
     const paginationContainer = document.getElementById('paginationContainer');
@@ -56,12 +63,13 @@ function generatePagination() {
 
     for (let i = 1; i <= totalPages; i++) {
         const pageItem = `
-            <li class="page-item ${i === currentPage ? 'active' : ''}">
+            <li class="page-item mx-1 ${i === currentPage ? 'active' : ''}">
                 <a class="page-link" href="#" onclick="changePage(${i})">${i}</a>
             </li>`;
         paginationContainer.innerHTML += pageItem;
     }
 }
+
 
 // Cambiar página
 function changePage(page) {
