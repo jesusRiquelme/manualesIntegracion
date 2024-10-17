@@ -1,4 +1,4 @@
-const cardsPerPage = 3;
+const cardsPerPage = 6;
 let currentPage = 1;
 let filteredManuales = manuales;  // Usamos los manuales desde data.js
 
@@ -18,7 +18,7 @@ function generateCards(page) {
                     <div class="card-body">
                         <h5 class="card-title">${manual.nombre}</h5>
                         <p class="card-text">Tipo: ${manual.tipo}</p>
-                        <p class="card-text">Fecha: ${manual.fecha}</p>
+                        <p class="card-text">Fecha Actualización: ${manual.fecha}</p>
                         <p class="card-text">${manual.descripcion}</p>
                     </div>
                 </div>
