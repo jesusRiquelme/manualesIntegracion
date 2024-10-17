@@ -21,8 +21,6 @@
     </div>
 </nav>
 
-
-
     <div class="container my-5 text-center">
         <h2 id="manualTitle">Título del Manual</h2>
         <p id="manualDescription">Descripción del Manual</p>
@@ -39,23 +37,44 @@
     </div>
 
 <!-- Modal para las instrucciones -->
+<!-- Modal para las instrucciones -->
 <div class="modal fade" id="instruccionesModal" tabindex="-1" aria-labelledby="instruccionesModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl"> <!-- Centrado y más grande -->
+    <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
+            
+            <!-- Header del Modal -->
             <div class="modal-header custom-modal-header">
                 <h5 class="modal-title" id="instruccionesModalLabel">Detalles de este Paso</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body" id="modalInstruccionesBody">
-                <!-- Aquí se mostrarán las instrucciones -->
+            
+            <!-- Cuerpo del Modal -->
+            <div class="modal-body">
+                
+                <!-- Sección 1: Instrucciones o detalles sobre qué hacer en esta imagen -->
+                <section id="modalInstruccionesBody">
+                    <h6>Instrucciones</h6>
+                    <p>Aquí se mostrarán los detalles sobre qué debe hacer el usuario en esta imagen.</p>
+                </section>              
             </div>
+            <!-- Sección 2: Enlaces a documentación -->
+            <hr> 
+            <section id="documentacionEnlaces">
+                    
+                <!-- Aquí se mostrarán los enlaces a la documentación de manera dinámica -->
+            </section>
+
+            <!-- Footer del Modal -->
             <div class="modal-footer">
+                <p>¿Tienes más dudas? Consulta en 
+                    <a href="https://mail.google.com/chat/u/0/#chat/space/AAAAN6rQig0" target="_blank">Google Chat</a>
+                </p>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
-            
         </div>
     </div>
 </div>
+
 
 
     <!-- Carga data.js y el script para el manejo del manual -->
@@ -108,6 +127,7 @@
             // Mostrar instrucciones al hacer clic en el botón
             instruccionesButton.addEventListener('click', () => {
                 const instruccionesModal = new bootstrap.Modal(document.getElementById('instruccionesModal'));
+                updateModalContent(manual); //
                 instruccionesModal.show();
             });
 
@@ -135,6 +155,34 @@ document.addEventListener('click', (e) => {
         }, 1500); // Tiempo de duración de la animación (0.5s * 3)
     }
 });
+function updateModalContent(manual) {
+    // Asegúrate de que currentImageIndex tenga un valor válido (usamos 0 si no existe)
+    console.log(manual);
+
+    const index = currentImageIndex || 0;
+
+    // Verifica que haya instrucciones y que el índice no esté fuera de los límites
+    if (manual.instrucciones && manual.instrucciones.length > index) {
+        document.getElementById('modalInstruccionesBody').innerHTML = `<p>${manual.instrucciones[index]}</p>`;
+    } else {
+        document.getElementById('modalInstruccionesBody').innerHTML = '<p>No hay instrucciones disponibles para esta imagen.</p>';
+    }
+
+    // Actualiza los enlaces de documentación
+    const documentacionEnlaces = document.getElementById('documentacionEnlaces');
+    if (manual.enlacesDocumentacion && manual.enlacesDocumentacion.length > 0) {
+        let enlacesHtml = '<h6>Documentación Relacionada</h6><ul>';
+        manual.enlacesDocumentacion.forEach(enlace => {
+            enlacesHtml += `<li><a href="${enlace.url}" target="_blank">${enlace.nombre}</a></li>`;
+        });
+        enlacesHtml += '</ul>';
+        documentacionEnlaces.innerHTML = enlacesHtml;
+    } else {
+        documentacionEnlaces.innerHTML = '<p>No hay documentación relacionada disponible.</p>';
+    }
+}
+
+
 
 
 

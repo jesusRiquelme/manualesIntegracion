@@ -150,7 +150,7 @@ body {
 
 
 .custom-btn {
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Degradado de púrpura a azul */
+    background: linear-gradient(135deg, #1146cb 0%, #2575fc 100%); /* Degradado de púrpura a azul */
     color: white;
     border: none;
     border-radius: 50px;
@@ -161,7 +161,8 @@ body {
 }
 
 .custom-btn:hover {
-    background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+    background: linear-gradient(135deg, #2575fc 0%, #1146cb 100%);
+    color: white;
     transform: translateY(-3px);
 }
 
@@ -194,7 +195,7 @@ body {
 }
 
 .custom-modal-header {
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Degradado de púrpura a azul */
+    background: linear-gradient(135deg, #1146cb 0%, #2575fc 100%); /* Degradado de púrpura a azul */
     color: white; /* Texto en blanco */
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
