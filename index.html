@@ -1,304 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manuales Integraciones</title>
-    <!-- Agrega la referencia a Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <title>Manuales</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 
+</head>
 <body>
-    <header class="text-center">
-        <img src="img/buk-integraciones.png" class="img-fluid" alt="" style="height: 200px;">
-    </header>
-    <div class="container mt-5">
-        <header class="fondo">
-            <h1>Listado de Manuales disponibles</h1>
-        </header>
-        &nbsp;
-        <h5 class="color-titulo text-center">Dentro de esta sección podrás revisar los manuales que tenemos para
-            compartir. Permitiendo filtrar según tus criterios de búsqueda.</h5>
-        &nbsp;
-        <!-- Filtro -->
-        <div class="row">
-            <div class="col-md-4"> <!-- Columna para la Fecha -->
-                <p class="color-titulo mb-0">Fecha de hoy: <span id="fechaActual" class="font-weight-bold"></span></p>
-                <!-- Agrega un contenedor para mostrar la cantidad de datos -->
-                <div id="conteo-datos" class="mt-3"></div>
-            </div>
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-4"> <!-- Columna para el input y el botón -->
-                <div class="input-group">
-                    <input type="text" id="filtro" class="form-control"
-                        placeholder="fecha, tipo, nombre o descripción &#128269;">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://integracionescorp.buk.cl/" target="_blank"><i class="fas fa-home"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="https://script.google.com/a/macros/buk.cl/s/AKfycbwt90i97KkKNxqWqjJUiy5wQQsxqTTakp7191o_5-rQS9Z-vhBOo-FFVD9uKrl3R7Kusg/exec" target="_blank"><i class="fas fa-laptop-code"></i> Reunión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="https://script.google.com/macros/s/AKfycbw83QKpGoNU5eLc3zANBmP1-gdpb1-0DgBjEQ6i1nXztmhdM7alFJlOH06hHyJejDuMkg/exec" target="_blank"><i class="fas fa-laptop-code"></i> Gestión Data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="https://buk.atlassian.net/jira/software/c/projects/IN/boards/268" target="_blank"><i class="fab fa-jira"></i> Jira</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-chart-bar"></i> Looker</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://lookerstudio.google.com/reporting/68e70fb0-cd6e-4967-8209-ae2c616b8884" target="_blank">Partner y Clientes</a></li>
+                            <li><a class="dropdown-item" href="https://lookerstudio.google.com/reporting/f7fd6c0b-319b-4680-850e-b8c987913cca" target="_blank">Reunión Management</a></li>
+                            <li><a class="dropdown-item" href="https://lookerstudio.google.com/u/0/reporting/8c7b7bff-f100-4a92-b139-c097cc9f7ccf/page/k7EtD" target="_blank">Integraciones - SAC</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-database"></i> Base</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1zXqQfPCd_x0xYATF3sKaN0jx-06-uI7DyR3fEobwFN4/edit?usp=sharing" target="_blank">Tarjetas Management</a></li>
+                            <li><a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1qzaFvxp44T4J4xtkTqTocNYNoNSDvGZwIhByWyRAFAw/edit?usp=sharing" target="_blank">Data Clientes</a></li>
+                            <li><a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1-dwa7QN0R48EmJptS4nX86nMd76a3f8h93W23jY3O-o/edit?usp=sharing" target="_blank">Reuniones</a></li>
+                            <li><a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1_wzzqV8RPUYbtiufEyTpvb_psHcPoTqS5ATzJDZerno/edit?usp=sharing" target="_blank">Dudas Partner</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1MKuC1T50_LWUWxWzDhlL7qjY2Kcf8JjYXN9wYii8LSs/edit?usp=sharing" target="_blank">Carga Histórica</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-create-card" data-bs-toggle="modal" data-bs-target="#modalCrearTarjeta"><i class="fas fa-user-tie"></i></button>
+                    <button class="btn btn-create-card" data-bs-toggle="modal" data-bs-target="#modalCrearTarjetaInterna"><i class="icon-buk"></i></button>
+                    <button class="btn btn-create-card" data-bs-toggle="modal" data-bs-target="#modalGestionCarpetas"><i class="fab fa-google-drive"></i></button>
+                    <button class="btn btn-create-card" data-bs-toggle="modal" data-bs-target="#modalGestionClientes"><i class="fas fa-address-book"></i></button>
                 </div>
             </div>
         </div>
-        &nbsp;
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th class="color-titulo">Tipo</th>
-                    <th class="color-titulo">Nombre</th>
-                    <th class="color-titulo">Fecha Actualización</th>
-                    <th class="color-titulo">Descripción</th>
-                    <th class="color-titulo">Interno</th>
-                    <th class="color-titulo">Cliente</th>
-                </tr>
-            </thead>
-            <tbody id="tablaContenido">
-                <!-- Contenido de la tabla se agregará aquí dinámicamente -->
-            </tbody>
-        </table>
+    </nav>
+
+    <!-- Filtro -->
+    <div class="container my-4">
+        <input type="text" id="searchInput" class="form-control p-3" placeholder="Filtrar por tipo, nombre, fecha o descripción...">
+    </div>
+
+    <!-- Contenedor de Tarjetas -->
+    <div class="container mb-5 content">
+        <div class="row g-4" id="cardContainer">
+            <!-- Aquí se insertarán las tarjetas dinámicamente -->
+        </div>
 
         <!-- Paginación -->
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center" id="pagination"></ul>
+        <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center" id="paginationContainer">
+                <!-- Paginación dinámica -->
+            </ul>
         </nav>
     </div>
-    <!-- Icono Flotante -->
-    <div class="floating-icon" data-toggle="modal" data-target="#miModal">
-        <i class="bi bi-info-circle" style="font-size: 2rem;"></i>
+
+    <!-- Contenedor del logo justo antes del footer -->
+    <div class="logo-container">
+        <img src="img/buk_trabajo_feliz.png" alt="Logo" class="logo-footer">
     </div>
-    
+
     <!-- Footer -->
-    <footer class="bg-light text-center py-3 mt-5 d-flex justify-content-center">
-        <img src="img/buk_trabajo_feliz.png" alt="Logo" height="90" class="mx-3">
-        <img src="img/integraciones_by_buk.png" alt="Footer Image" height="100" class="mx-3"></img>
-    </footer>
-    <!-- Modal -->
-
-    <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <header class="fondo">
-                        <p>Manual Interactivo Integraciones</p>
-                    </header>
-                    &nbsp;
-                    <button type="button" class="close" data-dismiss="modal" onclick="cerrarModal()" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Contenido del modal según la opción seleccionada -->
-                    <p class="color-titulo"> Esta pagina principal es de uso interno. Esto es con la finalidad de poder
-                        centralizar nuestros manuales, tener una forma mas rapida y facil de acceder a ellos</p>
-                    <p class="color-titulo"> <strong> Destacar que no debemos compartir esta pagina inicial, si no que
-                            solamente los link directos a los manuales.</strong></p>
-                    <table class="table table-hover">
-                        <tr>
-                            <td class="color-titulo"><strong>Manuales Activos</strong></td>
-                            <td class="color-titulo">Es un contador con la cantidad de manuales que se encuentran en la
-                                pagina.</td>
-                        </tr>
-                        <tr>
-                            <td class="color-titulo"><strong>Filtros</strong></td>
-                            <td class="color-titulo">Puedes filtrar por cualquier palabra.</td>
-                        </tr>
-                        <tr>
-                            <td class="color-titulo"><strong>Tipo</strong></td>
-                            <td class="color-titulo">Corresponde al tipo de manual ejemplo, si es API, SFTP, SSO,
-                                centralización, Bonos, Variables, etc todo lo que sea relacionado a nuestra área</td>
-                        </tr>
-                        <tr>
-                            <td class="color-titulo"><strong>Nombre</strong></td>
-                            <td class="color-titulo">Un nombre breve del manual</td>
-                        </tr>
-                        <tr>
-                            <td class="color-titulo"><strong>Fecha Actualización</strong></td>
-                            <td class="color-titulo">Muestra la fecha de la última modificación realizada al manual</td>
-                        </tr>
-                        <tr>
-                            <td class="color-titulo"><strong>Descripción</strong></td>
-                            <td class="color-titulo">Una breve descripción de lo que trata el manual</td>
-                        </tr>
-                        <tr>
-                            <td class="color-titulo"><strong>Interno</strong></td>
-                            <td class="color-titulo">Encontraras el link para compartir el manual con nuestro cliente
-                                interno</td>
-                        </tr>
-                        <tr>
-                            <td class="color-titulo"><strong>Cliente</strong></td>
-                            <td class="color-titulo">Encontraras el link para compartir el manual con un cliente
-                                externo. La diferencia por el momento, se debe a la eliminación de la última hoja del
-                                manual donde sale el acceso a nuestro drive y canal de slack</td>
-                        </tr>
-                        <tr>
-                            <td class="color-titulo"><strong>Paginación</strong></td>
-                            <td class="color-titulo">Cuenta con una paginación donde mostrara 3 manuales por paginas.
-                            </td>
-                        </tr>
-                        <tr>
-                        </tr>
-                    </table>
-                    <br>
-                    <p class="color-titulo"> Ante cualquier duda, consulta o feedback acercarse al equipo de Management</p>
-                </div>
-                <footer class="bg-light text-center py-3 mt-5 d-flex justify-content-center">
-                    <img src="img/integraciones_by_buk.png" alt="Footer Image" height="100" class="mx-3"></img>
-                </footer>
-            </div>
+    <footer class="footer-custom text-center text-lg-start mt-auto py-3">
+        <div class="text-center">
+            © 2024 Manuales | Desarrollado por Jesús Riquelme
         </div>
-    </div>
+    </footer>
 
-    <!-- Agrega la referencia a Bootstrap JS y Popper.js (necesarios para algunas funcionalidades de Bootstrap) -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script>
-        // Obtener la fecha actual
-        var fecha = new Date();
-        // Formatear la fecha como "DD-MM-YYYY" (puedes ajustar el formato según tus preferencias)
-        var formatoFecha = (fecha.getDate() < 10 ? '0' : '') + fecha.getDate() + '-' +
-            ((fecha.getMonth() + 1) < 10 ? '0' : '') + (fecha.getMonth() + 1) + '-' +
-            fecha.getFullYear();
-        // Mostrar la fecha en el elemento con el id "fechaActual"
-        document.getElementById('fechaActual').textContent = formatoFecha;
-
-        // Variable para almacenar datos
-        var datos = [];
-        // Variable para almacenar los datos filtrados
-        var datosFiltrados = [];
-
-        // Función para cargar y mostrar datos desde data.json
-        function cargarDatos() {
-            fetch('data.json')
-                .then(response => response.json())
-                .then(data => {
-                    // Guardar los datos en la variable global
-                    datos = data;
-                    datosFiltrados = data; // Inicialmente, los datos filtrados son iguales a todos los datos
-                    // Mostrar la cantidad de datos
-                    mostrarCantidadDatos(data.length);
-                    // Inicializar la paginación
-                    iniciarPaginacion();
-                    // Mostrar la primera página al cargar los datos
-                    mostrarPagina(1);
-                })
-                .catch(error => console.error('Error al cargar los datos', error));
-        }
-
-        // Función para mostrar la cantidad de datos
-        function mostrarCantidadDatos(cantidad) {
-            document.getElementById('conteo-datos').innerHTML = `<p class="color-titulo">Manuales activos: <strong>${cantidad}</strong></p>`;
-        }
-
-        // Función para mostrar los datos en la tabla
-        function mostrarDatosEnTabla(datos) {
-            const tablaContenido = document.getElementById('tablaContenido');
-            tablaContenido.innerHTML = '';
-            // Recorrer los datos y agregar filas a la tabla
-            datos.forEach(item => {
-                const fila = document.createElement('tr');
-                fila.innerHTML = `
-            <td class="color-titulo">${item.tipo}</td>
-            <td class="color-titulo">${item.nombre}</td>
-            <td class="color-titulo">${item.fecha}</td>
-            <td class="color-titulo">${item.descripcion}</td>
-            <td class="color-titulo"><a href="${item.enlace}" class="btn btn-link" target="_blank"><i class="bi bi-building" style="font-size: 2rem"></i></a></td>
-            <td class="color-titulo"><a href="${item.enlace_cliente}" class="btn btn-link" target="_blank"><i class="bi bi-person-check-fill" style="font-size: 2rem";></i></a></td>
-          `;
-                tablaContenido.appendChild(fila);
-            });
-        }
-
-        // Inicializar la paginación
-        function iniciarPaginacion() {
-            const elementosPorPagina = 3; // Cambiado a 3 elementos por página
-            const totalPaginas = Math.ceil(datosFiltrados.length / elementosPorPagina);
-            const ulPaginacion = document.getElementById('pagination');
-
-            for (let i = 1; i <= totalPaginas; i++) {
-                const li = document.createElement('li');
-                li.classList.add('page-item');
-                const a = document.createElement('a');
-                a.classList.add('page-link');
-                a.href = '#';
-                a.textContent = i;
-                a.addEventListener('click', function (event) {
-                    event.preventDefault(); // Evitar que la página se desplace hacia arriba
-                    mostrarPagina(i);
-                });
-                li.appendChild(a);
-                ulPaginacion.appendChild(li);
-            }
-        }
-
-        // Función para resaltar la página actual
-        function resaltarPaginaActual(numeroPagina) {
-            const listaPaginas = document.querySelectorAll('#pagination li');
-            listaPaginas.forEach((pagina, index) => {
-                if (index + 1 === numeroPagina) {
-                    pagina.classList.add('active');
-                } else {
-                    pagina.classList.remove('active');
-                }
-            });
-        }
-
-        // Función para mostrar una página específica
-        function mostrarPagina(numeroPagina) {
-            const elementosPorPagina = 3; // Cambiado a 3 elementos por página
-            const inicio = (numeroPagina - 1) * elementosPorPagina;
-            const fin = inicio + elementosPorPagina;
-            const datosPagina = datosFiltrados.slice(inicio, fin);
-            mostrarDatosEnTabla(datosPagina);
-            resaltarPaginaActual(numeroPagina);
-        }
-
-        // Agregar evento de escucha al campo de filtro
-        document.getElementById('filtro').addEventListener('input', function () {
-            // Obtener el valor del filtro
-            var filtro = this.value.toLowerCase();
-            // Filtrar los datos
-            datosFiltrados = datos.filter(function (item) {
-                return (
-                    item.tipo.toLowerCase().includes(filtro) ||
-                    item.nombre.toLowerCase().includes(filtro) ||
-                    item.fecha.toLowerCase().includes(filtro) ||
-                    item.descripcion.toLowerCase().includes(filtro)
-                );
-            });
-            // Mostrar la primera página después de aplicar el filtro
-            mostrarPagina(1);
-            // Actualizar la paginación después de aplicar el filtro
-            actualizarPaginacion();
-        });
-
-        // Función para actualizar la paginación después de aplicar el filtro
-        function actualizarPaginacion() {
-            const ulPaginacion = document.getElementById('pagination');
-            ulPaginacion.innerHTML = ''; // Limpiar la paginación actual
-
-            const elementosPorPagina = 3; // Cambiado a 3 elementos por página
-            const totalPaginas = Math.ceil(datosFiltrados.length / elementosPorPagina);
-
-            for (let i = 1; i <= totalPaginas; i++) {
-                const li = document.createElement('li');
-                li.classList.add('page-item');
-                const a = document.createElement('a');
-                a.classList.add('page-link');
-                a.href = '#';
-                a.textContent = i;
-                a.addEventListener('click', function (event) {
-                    event.preventDefault(); // Evitar que la página se desplace hacia arriba
-                    mostrarPagina(i);
-                });
-                li.appendChild(a);
-                ulPaginacion.appendChild(li);
-            }
-        }
-
-        // Mostrar todos los datos inicialmente
-        cargarDatos();
-    </script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="data.js"></script> <!-- Primero carga los datos -->
+    <script src="script.js"></script> <!-- Después el script que usa los datos -->
 </body>
-
 </html>
