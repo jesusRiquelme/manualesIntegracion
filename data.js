@@ -2,7 +2,8 @@ const manuales = [
   {
       "tipo": "SFTP", 
       "nombre": "Envío de Centralización por SFTP", 
-      "fecha": "01-12-2023", 
+      "fecha": "01-12-2023",
+      "importante":"",
       "descripcion": "Verificar la configuración del SFTP para el envío del archivo centralización", 
       "url": "manual.html?option=centralizacion_sftp",
       "activo": false, 
@@ -19,7 +20,8 @@ const manuales = [
   {
       "tipo": "SFTP", 
       "nombre": "Envío de Banco por SFTP", 
-      "fecha": "01-12-2023", 
+      "fecha": "01-12-2023",
+      "importante":"",
       "descripcion": "Verificar la configuración del SFTP para el envío del archivo banco", 
       "url": "manual.html?id=banco_sftp",
       "activo": false, 
@@ -36,7 +38,8 @@ const manuales = [
   {
       "tipo": "SFTP", 
       "nombre": "Validar el envío a SFTP", 
-      "fecha": "05-12-2023", 
+      "fecha": "05-12-2023",
+      "importante":"",
       "descripcion": "Veremos el paso a paso para probar el envío del archivo banco o centralización al SFTP de BUK", 
       "url": "manual.html?id=probar_sftp",
       "activo": false,
@@ -53,7 +56,8 @@ const manuales = [
   {
       "tipo": "API", 
       "nombre": "Creación de token y conexión API", 
-      "fecha": "01-12-2023", 
+      "fecha": "01-12-2023",
+      "importante":"",
       "descripcion": "Veremos como configurar el token (llave) desde BUK para poder conectarnos en apidocs", 
       "url": "manual.html?id=token_api",
       "activo": false, 
@@ -70,7 +74,8 @@ const manuales = [
   {
       "tipo": "API", 
       "nombre": "Utilizar API desde Postman", 
-      "fecha": "07-12-2023", 
+      "fecha": "07-12-2023",
+      "importante":"",
       "descripcion": "Veremos como realizar la misma consulta de apidocs en una herramienta externa de BUK (Postman)", 
       "url": "manual.html?id=api_postman",
       "activo": false,
@@ -87,7 +92,8 @@ const manuales = [
   {
       "tipo": "API", 
       "nombre": "Configuración de Webhook y pruebas", 
-      "fecha": "15-12-2023", 
+      "fecha": "15-12-2023",
+      "importante":"",
       "descripcion": "Veremos la configuración del webhook y realizaremos una prueba con un servidor externo", 
       "url": "manual.html?id=webhook_config_pruebas",
       "activo": false,
@@ -104,7 +110,8 @@ const manuales = [
   {
       "tipo": "SSO", 
       "nombre": "Configurar SSO OAUTH", 
-      "fecha": "01-12-2023", 
+      "fecha": "01-12-2023",
+      "importante":"",
       "descripcion": "Veremos como configurar el SSO - Protocolo OAUTH", 
       "url": "manual.html?id=sso_oauth",
       "activo": false,
@@ -121,7 +128,13 @@ const manuales = [
   {
       "tipo": "SSO", 
       "nombre": "Configurar SSO SAML", 
-      "fecha": "17-10-2024", 
+      "fecha": "17-10-2024",
+      "importante":" Si has llegado a esta sección, debiste haber enviado al cliente el <strong>Identifier</strong> y el <strong>ACS</strong> para generar el XML que necesitaremos para realizar la configuración.<br><br>\
+       <strong>ACS:</strong> https://demo.buk.cl/users/saml/auth </br></br> \
+       <strong>Identifier:</strong> https://demo.buk.cl/users/saml/metadata </br></br> \
+       Estos dos parámetros son fundamentales, ya que el cliente debe ingresarlos en su proveedor de identidad al momento de crear la aplicación.\
+       Una vez creada la aplicación, el cliente podrá descargar un archivo XML desde su proveedor.<br><br>\
+       Es importante que el colaborador con el cual se realizará la prueba exista tanto en <strong>BUK</strong> como en la aplicación creada en el proveedor de identidad.",
       "descripcion": "Este manual te guía en la configuración del inicio de sesión único (SSO) mediante SAML, permitiendo a los usuarios autenticarse a través de su Proveedor de Identidad (IdP) para acceder a la plataforma de manera segura y sin credenciales adicionales.", 
       "url": "manual.html?id=sso_saml",
       "activo": true, 
