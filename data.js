@@ -136,16 +136,15 @@ const manuales = [
             { x: 210, y: 53, width: 175, height: 35 }  // Rectángulo para la segunda imagen
         ],
       "instrucciones": [
-    "<p class='text-center'>Debes hacer clic para acceder a los ajustes de la plataforma.</p>",
-    "<p class='text-center'>Aquí encontraremos todas las configuraciones que nos entrega la plataforma.</p>",
-
-    "<p class='text-center'>Debes ingresar la palabra <strong>OMNIAUTH</strong> para encontrar la configuración.</p>",
-    "<p class='text-center'>Debes seleccionar la opción <strong>General</strong>.</p>",
-    "<p class='text-center'>Luego de configurar cada uno de los campos solicitados, daremos clic en el botón <strong>Guardar</strong>.</p>",
-    "<p class='text-center'>Debes ingresar la palabra <strong>DOMINIO</strong> para encontrar la configuración.</p>",
-    "<p class='text-center'>Aqui debemos ingresar el dominio según el proveedor a utilizar si es Google o Microsoft</p>",
-    "<p class='text-center'>Luego de configurar cada uno de los campos solicitados, daremos clic en el botón <strong>Guardar</strong>.</p>",
-    "<p class='text-center'>Ya podemos ver en la parte superior el mensaje de éxito. Ahora es momento de hacer pruebas ingresando con algún colaborador que exista en BUK y dentro de la aplicación creada en el proveedor.</p>"
+    "<p class='text-center'style='color: #2f4daa; font-size: 1.0rem; margin-top: 80px;'>Debes hacer clic para acceder a los ajustes de la plataforma.</p>",
+    "<p class='text-center'style='color: #2f4daa; font-size: 1.0rem; margin-top: 80px;'>Aquí encontraremos todas las configuraciones que nos entrega la plataforma.</p>",
+    "<p class='text-center'style='color: #2f4daa; font-size: 1.0rem; margin-top: 80px;'>Debes ingresar la palabra <strong>OMNIAUTH</strong> para encontrar la configuración.</p>",
+    "<p class='text-center'style='color: #2f4daa; font-size: 1.0rem; margin-top: 80px;'>Debes seleccionar la opción <strong>General</strong>.</p>",
+    "<p class='text-center'style='color: #2f4daa; font-size: 1.0rem; margin-top: 80px;'>Luego de configurar cada uno de los campos solicitados, daremos clic en el botón <strong>Guardar</strong>.</p>",
+    "<p class='text-center'style='color: #2f4daa; font-size: 1.0rem; margin-top: 80px;'>Debes ingresar la palabra <strong>DOMINIO</strong> para encontrar la configuración.</p>",
+    "<p class='text-center'style='color: #2f4daa; font-size: 1.0rem; margin-top: 80px;'>Aqui debemos ingresar el dominio según el proveedor a utilizar si es Google o Microsoft</p>",
+    "<p class='text-center'style='color: #2f4daa; font-size: 1.0rem; margin-top: 80px;'>Luego de configurar cada uno de los campos solicitados, daremos clic en el botón <strong>Guardar</strong>.</p>",
+    "<p class='text-center'style='color: #2f4daa; font-size: 1.0rem; margin-top: 80px;'>Ya podemos ver en la parte superior el mensaje de éxito. Ahora es momento de hacer pruebas ingresando con algún colaborador que exista en BUK y dentro de la aplicación creada en el proveedor.</p>"
 ],
     "enlacesDocumentacion": [
         {
@@ -186,10 +185,10 @@ const manuales = [
             { x: 210, y: 53, width: 175, height: 35 }  // Rectángulo para la segunda imagen
         ],
       "instrucciones": [
-    "<p class='text-center'>Debes hacer clic para acceder a los ajustes de la plataforma.</p>",
-    "<p class='text-center'>Aquí encontraremos todas las configuraciones que nos entrega la plataforma.</p>",
+    "<p class='text-center'style='color: #2f4daa; font-size: 1.0rem; margin-top: 80px;'>Debes hacer clic para acceder a los ajustes de la plataforma.</p>",
+    "<p class='text-center'style='color: #2f4daa; font-size: 1.0rem; margin-top: 80px;'>Aquí encontraremos todas las configuraciones que nos entrega la plataforma.</p>",
 
-    "<p class='text-center'>Debes ingresar la palabra <strong>SAML</strong> para encontrar la configuración.</p>",
+    "<p class='text-center'style='color: #2f4daa; font-size: 1.0rem; margin-top: 80px;'>Debes ingresar la palabra <strong>SAML</strong> para encontrar la configuración.</p>",
 
     "<table class='table table-striped table-bordered'> \
         <thead class='table-dark'> \
@@ -242,9 +241,9 @@ const manuales = [
         </tbody> \
     </table>",
 
-    "<p class='text-center'>Luego de configurar cada uno de los campos solicitados, daremos clic en el botón <strong>Guardar</strong>.</p>",
+    "<p class='text-center'style='color: #2f4daa; font-size: 1.0rem; margin-top: 80px;'>Luego de configurar cada uno de los campos solicitados, daremos clic en el botón <strong>Guardar</strong>.</p>",
 
-    "<p class='text-center'>Ya podemos ver en la parte superior el mensaje de éxito. Ahora es momento de hacer pruebas ingresando con algún colaborador que exista en BUK y dentro de la aplicación creada en el proveedor.</p>"
+    "<p class='text-center'style='color: #2f4daa; font-size: 1.0rem; margin-top: 80px;'>Ya podemos ver en la parte superior el mensaje de éxito. Ahora es momento de hacer pruebas ingresando con algún colaborador que exista en BUK y dentro de la aplicación creada en el proveedor.</p>"
 ],
     "enlacesDocumentacion": [
         {

@@ -27,13 +27,13 @@ function generateCards(page) {
         card.innerHTML = `
             <div class="card ${manual.activo ? 'card-active' : 'card-inactive'}" style="cursor: ${manual.activo ? 'pointer' : 'not-allowed'};">
                 <div class="card-body">
-                    <h5 class="card-title">${manual.nombre}</h5>
-                    <p class="card-text">Tipo: ${manual.tipo}</p>
-                    <p class="card-text">Fecha Actualización: ${manual.fecha}</p>
-                    <p class="card-text">${descripcionCorta}</p> <!-- Descripción recortada -->
+                    <h5 class="card-title" style='color: #2f4daa;'>${manual.nombre}</h5>
+                    <p class="card-text" style='color: #2f4daa;'>Tipo: ${manual.tipo}</p>
+                    <p class="card-text" style='color: #2f4daa;'>Fecha Actualización: ${manual.fecha}</p>
+                    <p class="card-text" style='color: #2f4daa;'>${descripcionCorta}</p> <!-- Descripción recortada -->
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="check${manual.nombre}" ${manual.activo ? 'checked' : ''} disabled>
-                        <label class="form-check-label" for="check${manual.nombre}">
+                        <label class="form-check-label" style='color: #2f4daa;' for="check${manual.nombre}">
                             ${manual.activo ? 'Activo' : 'Inactivo'}
                         </label>
                     </div>

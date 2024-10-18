@@ -92,6 +92,12 @@
     </footer>
 
     <!-- Scripts -->
+     <script>
+        // Verificar si el usuario está autenticado
+        if (!localStorage.getItem('loggedIn')) {
+            window.location.href = 'login.html'; // Redirigir al login si no está autenticado
+        }
+     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="data.js"></script> <!-- Primero carga los datos -->
     <script src="script.js"></script> <!-- Después el script que usa los datos -->

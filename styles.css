@@ -117,18 +117,22 @@ body {
     height: auto; /* Mantiene la proporción de la imagen */
 }
 
-/* Animación de temblor */
-@keyframes shake {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(-3px, 3px); }
-    50% { transform: translate(3px, -3px); }
-    75% { transform: translate(-3px, 3px); }
-    100% { transform: translate(0, 0); }
+/* Animación de zoom */
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Se agranda un 20% */
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
-/* Animación para parpadeo con temblor */
+/* Animación para parpadeo con zoom */
 .highlight-btn.blinking {
-    animation: shake 0.2s linear 5; /* Temblor rápido 5 veces */
+    animation: zoom 0.6s ease-in-out 3; /* Zoom de ida y vuelta 3 veces */
 }
 
 /* Estilo del botón resaltado */
@@ -197,7 +201,7 @@ body {
 }
 
 .custom-modal-header {
-    background: linear-gradient(135deg, #1146cb 0%, #2575fc 100%); /* Degradado de púrpura a azul */
+    background: linear-gradient(135deg, #2f4daa 0%, #2f4daa 100%); /* Degradado de púrpura a azul */
     color: white; /* Texto en blanco */
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -292,4 +296,6 @@ body, html {
     opacity: 1;
 }
 
-
+.btn-close-white {
+    filter: invert(1); /* Invierte el color de la X a blanco */
+}
