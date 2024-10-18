@@ -110,20 +110,53 @@ const manuales = [
   {
       "tipo": "SSO", 
       "nombre": "Configurar SSO OAUTH", 
-      "fecha": "01-12-2023",
+      "fecha": "17-10-2024",
       "importante":"",
-      "descripcion": "Veremos como configurar el SSO - Protocolo OAUTH", 
+      "descripcion": "Este manual te guía en la configuración del inicio de sesión único (SSO) mediante OAUTH, permitiendo a los usuarios autenticarse a través de su Proveedor de Identidad (IdP) para acceder a la plataforma de manera segura y sin credenciales adicionales.", 
       "url": "manual.html?id=sso_oauth",
-      "activo": false,
-      "imagenes": ["imagenes/api_postman/utilizar_api_postman_1.png", "imagenes/api_postman/utilizar_api_postman_2.png"],
+      "activo": true, 
+      "imagenes": ["imagenes/sso_oauth/sso_oauth_1.png",
+                  "imagenes/sso_oauth/sso_oauth_2.png",
+                  "imagenes/sso_oauth/sso_oauth_3.png",
+                  "imagenes/sso_oauth/sso_oauth_4.png",
+                  "imagenes/sso_oauth/sso_oauth_5.png",
+                  "imagenes/sso_oauth/sso_oauth_6.png",
+                  "imagenes/sso_oauth/sso_oauth_7.png",
+                  "imagenes/sso_oauth/sso_oauth_8.png",
+                  "imagenes/sso_oauth/sso_oauth_9.png"],
       "highlightDetails": [
-            { x: 955, y: 5, width: 45, height: 40 },  // Rectángulo para la primera imagen
-            { x: 1010, y: 63, width: 270, height: 40 }  // Rectángulo para la segunda imagen
+            { x: 1030, y: 3, width: 45, height: 40 },  // Rectángulo para la primera imagen
+            { x: 1050, y: 100, width: 240, height: 40 },  // Rectángulo para la segunda imagen
+            { x: 1100, y: 53, width: 185, height: 35 },  // Rectángulo para la segunda imagen
+            { x: 218, y: 170, width: 345, height: 35 },  // Rectángulo para la segunda imagen
+            { x: 1210, y: 246, width: 85, height: 35 },  // Rectángulo para la segunda imagen
+            { x: 1100, y: 95, width: 185, height: 35 },  // Rectángulo para la segunda imagen
+            { x: 218, y: 355, width: 350, height: 35 },  // Rectángulo para la segunda imagen
+            { x: 1210, y: 512, width: 83, height: 35 },  // Rectángulo para la segunda imagen
+            { x: 210, y: 53, width: 175, height: 35 }  // Rectángulo para la segunda imagen
         ],
       "instrucciones": [
-            "Instrucción 1: Aquí es donde configuramos el SFTP.",
-            "Instrucción 2: Asegúrate de verificar los detalles de la configuración."
-        ]
+    "<p class='text-center'>Debes hacer clic para acceder a los ajustes de la plataforma.</p>",
+    "<p class='text-center'>Aquí encontraremos todas las configuraciones que nos entrega la plataforma.</p>",
+
+    "<p class='text-center'>Debes ingresar la palabra <strong>OMNIAUTH</strong> para encontrar la configuración.</p>",
+    "<p class='text-center'>Debes seleccionar la opción <strong>General</strong>.</p>",
+    "<p class='text-center'>Luego de configurar cada uno de los campos solicitados, daremos clic en el botón <strong>Guardar</strong>.</p>",
+    "<p class='text-center'>Debes ingresar la palabra <strong>DOMINIO</strong> para encontrar la configuración.</p>",
+    "<p class='text-center'>Aqui debemos ingresar el dominio según el proveedor a utilizar si es Google o Microsoft</p>",
+    "<p class='text-center'>Luego de configurar cada uno de los campos solicitados, daremos clic en el botón <strong>Guardar</strong>.</p>",
+    "<p class='text-center'>Ya podemos ver en la parte superior el mensaje de éxito. Ahora es momento de hacer pruebas ingresando con algún colaborador que exista en BUK y dentro de la aplicación creada en el proveedor.</p>"
+],
+    "enlacesDocumentacion": [
+        {
+            "nombre": "Integración OAUTH",
+            "url": "https://docs.google.com/document/d/153Z6dIywDyZQVLDG458cUdKxSISovoZ3/edit?usp=drive_link&ouid=106476513391002674895&rtpof=true&sd=true"
+        },
+        {
+            "nombre": "OAUTH Integration English Version",
+            "url": "https://docs.google.com/document/d/1y_lDcAp956WDmuiEPTSH57YxsyBa14SG/edit?usp=drive_link&ouid=106476513391002674895&rtpof=true&sd=true"
+        }
+    ]
   },
   {
       "tipo": "SSO", 
